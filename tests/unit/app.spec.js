@@ -1,11 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
 import App from '../../src/App.vue'
-import rickMortyBack from '../../src/rickMortyBack';
+import getCharacterById from '../../src/gateways/getCharacterById';
 import RepresentationCharacter from '../../src/components/RepresentationCharacter';
 
-jest.mock('../../src/rickMortyBack', () => ({
-  getCharacterById: jest.fn(),
-}));
+jest.mock('../../src/gateways/getCharacterById');
 
 const msg = 'new message'
 const factory = () => shallowMount(App);
@@ -28,7 +26,7 @@ describe('Given App page starts', () => {
     });
 
     it('And rickMortyBack.getCharacterById is called', () => {
-      expect(rickMortyBack.getCharacterById).toHaveBeenCalledWith(10);
+      expect(getCharacterById).toHaveBeenCalledWith(10);
     });
   });
 

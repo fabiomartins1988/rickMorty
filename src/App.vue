@@ -23,7 +23,7 @@
 
 <script>
 import RepresentationCharacter from './components/RepresentationCharacter.vue';
-import rickMortyBack from './rickMortyBack.js';
+import getCharacterById from './gateways/getCharacterById.js';
 
 export default {
   name: 'App',
@@ -54,11 +54,11 @@ export default {
   methods: {
     async rickMortyFromBack(characterId) {
       try {
-        const response = await rickMortyBack.getCharacterById(characterId)
+        const response = await getCharacterById(characterId)
         this.imagem = response.image
         this.name = response.name
       } catch (error) {
-        console.log(error.response);
+        // console.log(error.response);
       }
     },
 

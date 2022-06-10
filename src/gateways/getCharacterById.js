@@ -12,4 +12,4 @@ async function getCharacterById(characterId) {
   }
 }
 
-module.exports = { getCharacterById };
+module.exports = getCharacterById;

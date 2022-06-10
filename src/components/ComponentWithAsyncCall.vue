@@ -3,19 +3,19 @@
 </template>
 
 <script>
-import axios from "axios"
+import getRandomText from "../gateways/getRandomText"
 
 export default {
   name: "ComponentWithAsyncCall",
   
-  created() {
-    this.makeApiCall()
+  data () {
+    return {}
   },
-  
+
   methods: {
     async makeApiCall() {
       console.log("--------------- Making api call ---------------------")
-      await axios.get("https://jsonplaceholder.typicode.com/posts/1")
+      await getRandomText();
     }
   }
 }
